@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
+import { UsersRoutingModule } from './users-routing.module';
+import { SharedModule } from 'src/app/shared/shared.module';
+
 import { EditUserComponent } from './edit-user/edit-user.component';
 import { UserDetailsComponent } from './user-details/user-details.component';
 import { UsersListComponent } from './users-list/users-list.component';
-import { RouterModule, Routes } from '@angular/router';
 
-const usersRoutes: Routes = [];
 
 @NgModule({
   declarations: [
@@ -14,8 +15,8 @@ const usersRoutes: Routes = [];
     UsersListComponent
   ],
   imports: [
-    CommonModule,
-    RouterModule.forChild(usersRoutes)
+    UsersRoutingModule,
+    SharedModule,
   ]
 })
 export class UsersModule { }

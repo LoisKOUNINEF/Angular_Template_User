@@ -1,1 +1,34 @@
-<p>login works!</p>
+<!-- Page Title -->
+<div>
+    <div class="container">
+        <p><a routerLink="/signup"><strong><u>Signup</u></strong></a></p>
+    </div>
+</div>
+
+<!-- Profile Authentication -->
+<div>
+    <div class="container">
+        <div>
+            <div>
+                <h2>Login</h2>
+                <form [formGroup]="loginForm" (ngSubmit)="login()">
+                    <div>
+                        <label for="email">E-mail</label>
+                        <input type="text" id="email" placeholder="Adresse e-mail" formControlName="email" required>
+                        <span *ngIf="controls.email?.touched && (controls.email?.hasError('required') || controls.email?.invalid)" class="errors">Email required.</span>
+                    </div>
+                    <div>
+                        <label>Password</label>
+                        <input type="password" id="password" placeholder="Password" formControlName="password" required>
+                        <span *ngIf="controls.password?.touched && controls.password?.hasError('required')" class="errors">Mot de Passe requis.</span>
+                    </div>
+                    <div>
+                        <button [disabled]="!loginForm.valid" type="submit">Login</button>
+                        <br><br>
+                        <a href="/#/send-password-reset"><p style="text-decoration: underline; font-size: small; "  >Forgot your password ?</p></a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

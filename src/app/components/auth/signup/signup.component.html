@@ -1,1 +1,30 @@
-<p>signup works!</p>
+<div>
+    <div class="container">
+        <p>Already have an account ? <a routerLink="/login"><u>Login</u></a></p>
+    </div>
+</div>
+
+<div>
+    <div class="container">
+        <div>
+            <div>
+                <h2 class="font-bold text-22px md:text-30px lg:text-35px mb-25 text-black-color">Sign Up</h2>
+                <form [formGroup]="signupForm">
+                    <div class="mb-25">
+                        <label>E-mail</label>
+                        <input type="text" id="email" placeholder="E-mail Adress" formControlName="email" required>
+                        <span *ngIf="controls.email?.touched && (controls.email?.hasError('required') || controls.email?.invalid)" class="errors">Email required.</span>
+                    </div>
+                    <div>
+                        <label>Password</label>
+                        <input type="password" id="password" placeholder="Password" formControlName="password" required>
+                        <span *ngIf="controls.password?.touched && (controls.password?.hasError('required') || controls.password?.invalid)" class="errors">Password required.<small>8 characters minimum.</small></span>
+                    </div>
+                    <div>
+                        <a (click)="signup()"><button [disabled]="!signupForm.valid" type="submit">Signup</button></a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
