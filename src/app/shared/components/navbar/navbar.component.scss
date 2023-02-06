@@ -1,0 +1,437 @@
+.navbar-area {
+    &.sticky-box-shadow {
+        @apply z-999;
+        @apply fixed;
+        @apply top-0;
+        @apply left-0;
+        @apply w-full;
+        @apply bg-white;
+        box-shadow: 0 2px 28px 0 rgba(0, 0, 0, 0.09);
+        animation: 500ms ease-in-out 0s normal none 1 running fadeInDown;
+    }
+    &.black-navbar {
+        &.sticky-box-shadow {
+            @apply bg-black-color;
+        }
+        .navbar {
+            ul {
+                li {
+                    a {
+                        @apply text-white;
+
+                        &::after, &::before {
+                            @apply bg-white;
+                        }
+                        &.active, &:hover {
+                            @apply text-primary-color;
+    
+                            &::after {
+                                @apply bg-primary-color;
+                            }
+                            &::before {
+                                @apply bg-primary-color;
+                            }
+                        }
+                    }
+                    ul {
+                        @apply bg-black;
+                    }
+                }
+            }
+        }
+    }
+    .navbar {
+        ul {
+            li {
+                a {
+                    &.active {
+                        @apply text-primary-color;
+
+                        &::after {
+                            @apply bg-primary-color;
+                        }
+                        &::before {
+                            @apply bg-primary-color;
+                        }
+                    }
+                }
+                ul {
+                    li {
+                        ul {
+                            @apply opacity-0;
+                            @apply invisible;
+                        }
+                        &:hover {
+                            ul {
+                                @apply opacity-100;
+                                @apply visible;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.d-none {
+    display: none;
+    
+    &.d-block {
+        display: block !important;
+    }
+    &.d-inline {
+        display: inline !important;
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width: 767px) {
+
+    .navbar-area {
+        @apply pt-15;
+        @apply pb-15;
+
+        .navbar-toggler {
+            @apply text-black;
+            @apply border-none;
+            font-size: inherit;
+            box-shadow: unset;
+            margin-left: auto;
+            position: absolute;
+            @apply right-0;
+            @apply p-0;
+            top: 9px;
+
+            .burger-menu {
+                cursor: pointer;
+
+                span {
+                    height: 3px;
+                    width: 30px;
+                    margin: 5px 0;
+                    display: block;
+                    @apply bg-black-color;
+                }
+            }
+        }
+        .navbar {
+            position: relative;
+            display: block;
+
+            .navbar-collapse {
+                display: none;
+                max-height: 50vh;
+                margin-top: 15px;
+                padding: 0 15px 15px;
+                flex-direction: unset;
+                background-color: #f9f9f9;
+                overflow: {
+                    y: scroll;
+                    x: hidden;
+                };
+                ul {
+                    li {
+                        margin: {
+                            left: 0;
+                            right: 0;
+                            top: 17px;
+                            bottom: 17px;
+                        };
+                        a {
+                            font-size: 14px;
+                            padding: {
+                                top: 0;
+                                right: 0;
+                                bottom: 0;
+                            };
+                            &::after, &::before {
+                                top: 5px;
+                            }
+                            &::after {
+                                right: 3px;
+                            }
+                            &::before {
+                                right: 9px;
+                            }
+                        }
+                        ul {
+                            visibility: visible;
+                            right: 0 !important;
+                            position: relative;
+                            left: 0 !important;
+                            @apply bg-white;
+                            top: 0 !important;
+                            box-shadow: unset;
+                            margin-top: 10px;
+                            overflow: hidden;
+                            width: auto;
+                            opacity: 1;
+                            padding: {
+                                top: 0;
+                                bottom: 0;
+                            };
+                            li {
+                                margin: {
+                                    top: 15px;
+                                    bottom: 15px;
+                                };
+                                a {
+                                    font-size: 13px;
+                                    padding: {
+                                        left: 15px;
+                                        right: 15px;
+                                    };
+                                    &::after {
+                                        right: 15px;
+                                    }
+                                    &::before {
+                                        right: 21px;
+                                    }
+                                }
+                                ul {
+                                    opacity: 1;
+                                    visibility: visible;
+                                    background-color: #f9f9f9;
+                                    margin: {
+                                        left: 15px;
+                                        right: 15px;
+                                    };
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            &.active {
+                .navbar-toggler {
+                    .burger-menu {
+                        span {
+                            &.top-bar {
+                                transform: rotate(45deg);
+                                transform-origin: 10% 10%;
+                            }
+                            &.middle-bar {
+                                opacity: 0;
+                            }
+                            &.bottom-bar {
+                                transform: rotate(-45deg);
+                                transform-origin: 10% 90%;
+                                margin-top: 5px;
+                            }
+                        }
+                    }
+                }
+                .navbar-collapse {
+                    display: block;
+                }
+            }
+        }
+        &.black-navbar {
+            .navbar-toggler {
+                @apply text-white;
+    
+                .burger-menu {
+                    span {
+                        @apply bg-white;
+                    }
+                }
+            }
+            .navbar {
+                .navbar-collapse {
+                    background-color: #202020;
+                    
+                    ul {
+                        li {
+                            ul {
+                                @apply bg-black-color;
+
+                                li {
+                                    ul {
+                                        background-color: #202020;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+    .navbar-area {
+        @apply pt-15;
+        @apply pb-15;
+
+        .navbar-toggler {
+            @apply text-black;
+            @apply border-none;
+            font-size: inherit;
+            box-shadow: unset;
+            margin-left: auto;
+            position: absolute;
+            @apply right-0;
+            @apply p-0;
+            top: 9px;
+
+            .burger-menu {
+                cursor: pointer;
+
+                span {
+                    height: 3px;
+                    width: 30px;
+                    margin: 5px 0;
+                    display: block;
+                    @apply bg-black-color;
+                }
+            }
+        }
+        .navbar {
+            position: relative;
+            display: block;
+
+            .navbar-collapse {
+                display: none;
+                max-height: 50vh;
+                margin-top: 15px;
+                padding: 0 15px 15px;
+                flex-direction: unset;
+                background-color: #f9f9f9;
+                overflow: {
+                    y: scroll;
+                    x: hidden;
+                };
+                ul {
+                    li {
+                        margin: {
+                            left: 0;
+                            right: 0;
+                            top: 17px;
+                            bottom: 17px;
+                        };
+                        a {
+                            font-size: 15px;
+                            padding: {
+                                top: 0;
+                                right: 0;
+                                bottom: 0;
+                            };
+                            &::after, &::before {
+                                top: 5px;
+                            }
+                            &::after {
+                                right: 3px;
+                            }
+                            &::before {
+                                right: 9px;
+                            }
+                        }
+                        ul {
+                            visibility: visible;
+                            right: 0 !important;
+                            position: relative;
+                            left: 0 !important;
+                            @apply bg-white;
+                            top: 0 !important;
+                            box-shadow: unset;
+                            margin-top: 10px;
+                            overflow: hidden;
+                            width: auto;
+                            opacity: 1;
+                            padding: {
+                                top: 0;
+                                bottom: 0;
+                            };
+                            li {
+                                margin: {
+                                    top: 15px;
+                                    bottom: 15px;
+                                };
+                                a {
+                                    font-size: 14px;
+                                    padding: {
+                                        left: 15px;
+                                        right: 15px;
+                                    };
+                                    &::after {
+                                        right: 15px;
+                                    }
+                                    &::before {
+                                        right: 21px;
+                                    }
+                                }
+                                ul {
+                                    opacity: 1;
+                                    visibility: visible;
+                                    background-color: #f9f9f9;
+                                    margin: {
+                                        left: 15px;
+                                        right: 15px;
+                                    };
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            &.active {
+                .navbar-toggler {
+                    .burger-menu {
+                        span {
+                            &.top-bar {
+                                transform: rotate(45deg);
+                                transform-origin: 10% 10%;
+                            }
+                            &.middle-bar {
+                                opacity: 0;
+                            }
+                            &.bottom-bar {
+                                transform: rotate(-45deg);
+                                transform-origin: 10% 90%;
+                                margin-top: 5px;
+                            }
+                        }
+                    }
+                }
+                .navbar-collapse {
+                    display: block;
+                }
+            }
+        }
+        &.black-navbar {
+            .navbar-toggler {
+                @apply text-white;
+    
+                .burger-menu {
+                    span {
+                        @apply bg-white;
+                    }
+                }
+            }
+            .navbar {
+                .navbar-collapse {
+                    background-color: #202020;
+                    
+                    ul {
+                        li {
+                            ul {
+                                @apply bg-black-color;
+
+                                li {
+                                    ul {
+                                        background-color: #202020;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}

@@ -4,9 +4,9 @@ import {
   filter, 
   map, 
   Observable } from 'rxjs';
-import { UserDTO } from 'src/app/shared/dto/user.dto';
-import { Result } from 'src/app/shared/models/result.model';
-import { User } from 'src/app/shared/models/user.model';
+import { UserDTO } from 'src/app/core/dto/user.dto';
+import { Result } from 'src/app/core/models/result.model';
+import { User } from 'src/app/core/models/user.model';
 import { ApiService } from '../api/api.service';
 
 @Injectable({

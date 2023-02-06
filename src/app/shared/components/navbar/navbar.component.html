@@ -1,0 +1,28 @@
+<div>
+    <ng-container *ngIf="!auth.isAdmin; then UserNavbar"></ng-container>
+    <ng-container *ngIf="auth.isAdmin; then AdminNavbar"></ng-container>
+    <ng-template #UserNavbar>
+        <nav></nav>
+    </ng-template>
+    <ng-template #AdminNavbar>
+        <nav></nav>
+    </ng-template>
+    <button>
+        <a *ngIf="!auth.isAuth"
+            routerLink="/login">
+            Login
+        </a>
+    </button>
+    <button>
+        <a *ngIf="!auth.isAuth"
+            routerLink="/signup">
+            Signup
+        </a>
+    </button>
+    <button>
+        <a *ngIf="auth.isAuth"
+            (click)="logout()">
+            Logout
+        </a>
+    </button>
+</div>
