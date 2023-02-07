@@ -1,1 +1,6 @@
-<p>edit-user works!</p>
+<form *ngIf="user" [formGroup]="userForm" (ngSubmit)="onSubmit()">
+	<p>{{ user.email }}</p>
+	<label>Administrator</label>
+	<input type="checkbox" [(ngModel)]="user.isAdmin" formControlName="isAdmin">
+<button type="submit">Validate change.</button>
+</form>

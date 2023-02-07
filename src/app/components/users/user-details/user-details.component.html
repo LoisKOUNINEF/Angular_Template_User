@@ -1,1 +1,6 @@
-<p>user-details works!</p>
+<div *ngIf="user">
+	<p>{{user.email}}</p>
+	<button routerLink="/users/edit-user/{{ user.email }}">
+	Update user status
+	</button>
+</div>

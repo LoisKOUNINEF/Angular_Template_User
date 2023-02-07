@@ -8,12 +8,12 @@ import { UsersListComponent } from './users-list/users-list.component';
 
 const usersRoutes: Routes = [
   {path: 'users', canActivate: [AuthGuard], children: [
-    {path: 'edit-user', component: EditUserComponent},
+    {path: 'edit-user/:email', component: EditUserComponent},
     {path: 'user-details/:email', component: UserDetailsComponent},
     {path: 'admin', canActivate: [AdminGuard], children: [
       {path: 'users-list', component: UsersListComponent}
-    ]}
-  ]}
+    ]},
+  ]},
 ]
 
 @NgModule({
