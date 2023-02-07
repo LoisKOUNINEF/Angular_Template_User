@@ -42,13 +42,13 @@ export class LoginComponent implements OnInit {
       this.subscription = this.auth.login(user)
       .subscribe((res: User) => {
         if (this.authService.isAdmin) {
-          this.router.navigate(['faq'])
+          this.router.navigate(['users/admin/users-list'])
         } else {
-        this.router.navigate(['products'])
+        this.router.navigate([''])
         }
       })
     };
-    this.router.navigate(['login']);
+    this.router.navigate(['auth/login']);
   }
   
   ngOnDestroy() {

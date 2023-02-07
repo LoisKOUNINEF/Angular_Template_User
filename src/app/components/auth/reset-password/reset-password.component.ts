@@ -40,10 +40,10 @@ export class ResetPasswordComponent {
       this.subscription = this.authService.resetPwd(user, this.token)
       .pipe(filter(res => !!res))
       .subscribe(() => {
-        this.router.navigate(['login'])
+        this.router.navigate(['auth/login'])
       })
     };
-    this.router.navigate([`reset-password/${this.token}`]);
+    this.router.navigate([`auth/reset-password/${this.token}`]);
   }
 
   ngOnDestroy() {

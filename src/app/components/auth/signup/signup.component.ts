@@ -43,7 +43,7 @@ export class SignupComponent {
       this.subscription = this.auth.signup(user)
       .pipe(filter(res => !!res))
       .subscribe((res: User) => {
-        this.authService.login(user)
+        this.auth.login(user)
         .subscribe(() => {
           this.router.navigate([''])
         }) 

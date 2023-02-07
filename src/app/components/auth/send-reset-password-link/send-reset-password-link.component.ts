@@ -39,10 +39,10 @@ export class SendResetPasswordLinkComponent {
       this.subscription = this.authService.sendPwdResetLink(user)
       .pipe(filter(res => !!res))
       .subscribe(() => {
-        this.router.navigate(['reset-link-success'])
+        this.router.navigate(['auth/reset-link-success'])
       })
     };
-    this.router.navigate(['send-password-reset']);
+    this.router.navigate(['auth/send-password-reset']);
   }
 
   ngOnDestroy() {
