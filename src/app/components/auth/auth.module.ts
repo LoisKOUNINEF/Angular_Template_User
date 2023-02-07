@@ -18,8 +18,8 @@ import { SendResetPasswordLinkComponent } from './send-reset-password-link/send-
     SendResetPasswordLinkComponent
   ],
   imports: [
-    AuthRoutingModule,
     SharedModule,
+    AuthRoutingModule,
   ],
 })
 export class AuthModule { }

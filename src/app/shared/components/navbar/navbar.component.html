@@ -9,13 +9,13 @@
     </ng-template>
     <button>
         <a *ngIf="!auth.isAuth"
-            routerLink="/login">
+            routerLink="/auth/login">
             Login
         </a>
     </button>
     <button>
         <a *ngIf="!auth.isAuth"
-            routerLink="/signup">
+            routerLink="/auth/signup">
             Signup
         </a>
     </button>

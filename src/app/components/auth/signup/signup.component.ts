@@ -45,12 +45,12 @@ export class SignupComponent {
       .subscribe((res: User) => {
         this.authService.login(user)
         .subscribe(() => {
-          this.router.navigate(['products'])
+          this.router.navigate([''])
         }) 
       })
     };
     
-    this.router.navigate(['signup']);
+    this.router.navigate(['auth/signup']);
   }
 
   ngOnDestroy() {

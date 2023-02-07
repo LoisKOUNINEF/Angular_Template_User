@@ -8,11 +8,14 @@ import { ResetLinkSuccessComponent } from './reset-link-success/reset-link-succe
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 
 const authRoutes: Routes = [
-  {path: 'login', component: LoginComponent},
-  {path: 'signup', component: SignupComponent},
-  {path: 'send-password-reset', component: SendResetPasswordLinkComponent },
-  {path: 'reset-link-success', component: ResetLinkSuccessComponent },
-  {path: 'reset-password/:token', component: ResetPasswordComponent },
+  {path: 'auth', children: [
+      {path: 'login', component: LoginComponent},
+      {path: 'signup', component: SignupComponent},
+      {path: 'send-reset-password-link', component: SendResetPasswordLinkComponent },
+      {path: 'reset-link-success', component: ResetLinkSuccessComponent },
+      {path: 'reset-password/:token', component: ResetPasswordComponent },
+    ]
+  }
 ]
 
 @NgModule({
